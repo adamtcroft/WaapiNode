@@ -1,1 +1,1 @@
-export {Wwise} from './source/connection';
+export {Wwise} from './source/wwise';
