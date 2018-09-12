@@ -2,7 +2,7 @@ import * as autobahn from 'autobahn';
 import {ak} from 'waapi';
 import * as waapi from 'waapi';
 
-export class Connection
+export class Wwise
 {
     connection:autobahn.Connection;
 
@@ -18,13 +18,13 @@ export class Connection
         );
     }
 
-    send()
+    send(WwisePacket)
     {
         this.connection.onopen = function(session)
         {
             console.log('wamp connection opened');
 
-            session.call(ak.wwise.core.getInfo, [], {}).then(
+            session.call(WwisePacket.functionCall, [], {}).then(
                 function (res)
                 {
                     console.log(res);
