@@ -4,7 +4,7 @@ export class WwisePacket {
     options;
 
     constructor(functionCall) {
-        this.functionCall = functionCall.value;
+        this.functionCall = functionCall;
     }
 }
 
