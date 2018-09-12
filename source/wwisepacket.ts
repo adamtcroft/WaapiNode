@@ -1,11 +1,14 @@
-export class WwisePacket
-{
-    functionCall:any;
+export class WwisePacket {
+    functionCall: Functions;
     arguments;
     options;
 
-    constructor(functionCall)
-    {
+    constructor(functionCall) {
         this.functionCall = functionCall;
     }
+}
+
+
+export enum Functions {
+    "ak.wwise.core.getInfo",
 }
