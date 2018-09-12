@@ -1,0 +1,25 @@
+{
+  "name": "waapinode",
+  "version": "1.0.0",
+  "description": "A Node.js Library that makes WAAPI easier to use",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamtcroft/WaapiNode.git"
+  },
+  "author": "Adam T. Croft",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adamtcroft/WaapiNode/issues"
+  },
+  "homepage": "https://github.com/adamtcroft/WaapiNode#readme",
+  "dependencies": {
+    "autobahn": "^18.3.2",
+    "waapi": "^2017.2.0",
+    "waapi-client": "^2017.2.1"
+  }
+}
