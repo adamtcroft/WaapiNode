@@ -4,11 +4,11 @@ export class WwisePacket {
     options;
 
     constructor(functionCall) {
-        this.functionCall = functionCall;
+        this.functionCall = functionCall.value;
     }
 }
 
 
 export enum Functions {
-    "ak.wwise.core.getInfo",
+    getInfo = "ak.wwise.core.getInfo",
 }
