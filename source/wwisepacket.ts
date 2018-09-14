@@ -8,7 +8,6 @@ export class WwisePacket {
     }
 }
 
-
 export enum Functions {
     getInfo = "ak.wwise.core.getInfo",
 }
