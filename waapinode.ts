@@ -1,2 +1,3 @@
 export {Wwise} from './source/wwise';
-export{WwisePacket, Functions} from './source/wwisepacket';
+export{WwisePacket} from './source/wwisepacket';
+export{WwiseFunctions} from './source/wwisefunctions';
