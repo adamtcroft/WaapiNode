@@ -20,5 +20,15 @@ export enum Functions {
     postTrigger = "ak.soundengine.postTrigger",
     registerGameObj = "ak.soundengine.registerGameObj",
     resetRTPCValue = "ak.soundegine.resetRTPCValue",
-    seekOnEvent = "ak.soundengine.seekOnEvent"
+    seekOnEvent = "ak.soundengine.seekOnEvent",
+    setDefaultListeners = "ak.soundengine.setDefaultListeners",
+    setGameObjectAuxSendValues = "ak.soundengine.setGameObjectAuxSendValues",
+    setGameObjectOutputBusVolume = "ak.soundengine.setGameObjectOutputBusVolume",
+    setListeners = "ak.soundengine.setListeners",
+    setListenerSpatialization = "ak.soundengine.setListenerSpatialization",
+    setMultiplePositions = "ak.soundengine.setMultiplePositions",
+    setObjectObstructionAndOcclusion = "ak.soundengine.setObjectObstructionAndOcclusion",
+    setPosition = "ak.soundengine.setPosition",
+    setRTPCValue = "ak.soundengine.setRTPCValue",
+    setScalingFactor = "ak.soundengine.setScalingFactor",
 }
