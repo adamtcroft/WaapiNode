@@ -8,6 +8,8 @@ export class Wwise
 {
     connection:autobahn.Connection;
     packet:WwisePacket;
+    dataFromWwise;
+    connectionError;
 
     constructor()
     {
@@ -26,6 +28,8 @@ export class Wwise
 
     send(WwisePacket)
     {
+        this.dataFromWwise = null;
+        this.connectionError = null;
         this.connection.onopen = function(session)
         {
             console.log('wamp connection opened');
@@ -48,12 +52,13 @@ export class Wwise
 
     receiveResponse(response)
     {
-        var obj = JSON.parse(response);
-        return obj;
+        this.dataFromWwise = JSON.parse(response);
+        return this.dataFromWwise;
     }
 
     receiveError(error)
     {
-        return error;
+        this.connectionError = error;
+        return this.connectionError;
     }
 }
