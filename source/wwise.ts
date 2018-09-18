@@ -8,8 +8,8 @@ export class Wwise
 {
     connection:autobahn.Connection;
     packet:WwisePacket;
-    public dataFromWwise:any;
-    public connectionError:any;
+    public dataFromWwise:any = null;
+    public connectionError:any = null;
 
     constructor()
     {
