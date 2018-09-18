@@ -8,8 +8,8 @@ export class Wwise
 {
     connection:autobahn.Connection;
     packet:WwisePacket;
-    public dataFromWwise:any = "init";
-    public connectionError:any = "init";
+    public dataFromWwise:any;
+    public connectionError:any;
 
     constructor()
     {
@@ -21,6 +21,9 @@ export class Wwise
                 protocols: ['wamp.2.json']
             }
         );
+
+        this.dataFromWwise = "init";
+        this.connectionError = "init";
 
         this.packet = new WwisePacket(WwiseFunctions.getInfo);
         this.send(this.packet);
