@@ -36,6 +36,7 @@ export class Wwise
             session.call(WwisePacket.functionCall, [], {}).then(
                 (res) =>
                 {
+                    console.log(res);
                     this.dataFromWwise = res;
                 },
                 (error) =>
