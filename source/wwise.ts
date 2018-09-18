@@ -50,13 +50,13 @@ export class Wwise
         this.connection.open();
     }
 
-    receiveResponse(response)
+    private receiveResponse(response)
     {
         this.dataFromWwise = JSON.parse(response);
         return this.dataFromWwise;
     }
 
-    receiveError(error)
+    private receiveError(error)
     {
         this.connectionError = error;
         return this.connectionError;
