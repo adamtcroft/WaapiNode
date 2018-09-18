@@ -8,8 +8,9 @@ export class Wwise
 {
     connection:autobahn.Connection;
     packet:WwisePacket;
-    public dataFromWwise:any;
-    public connectionError:any;
+    self = this;
+    public dataFromWwise:any = "init";
+    public connectionError:any = "init";
 
     constructor()
     {
@@ -22,29 +23,26 @@ export class Wwise
             }
         );
 
-        this.dataFromWwise = "init";
-        this.connectionError = "init";
-
         this.packet = new WwisePacket(WwiseFunctions.getInfo);
         this.send(this.packet);
     }
 
     receiveResponse(response)
     {
-        this.dataFromWwise = JSON.parse(response);
+        var that = this;
+        that.dataFromWwise = JSON.parse(response);
         return this.dataFromWwise;
     }
 
     receiveError(error)
     {
-        this.connectionError = error;
+        var that = this;
+        that.connectionError = error;
         return this.connectionError;
     }
 
     send(WwisePacket)
     {
-        this.dataFromWwise = null;
-        this.connectionError = null;
         this.connection.onopen = function(session)
         {
             console.log('wamp connection opened');
