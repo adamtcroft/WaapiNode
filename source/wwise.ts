@@ -8,8 +8,8 @@ export class Wwise
 {
     connection:autobahn.Connection;
     packet:WwisePacket;
-    public dataFromWwise;
-    public connectionError;
+    public dataFromWwise:any;
+    public connectionError:any;
 
     constructor()
     {
@@ -26,6 +26,18 @@ export class Wwise
         this.send(this.packet);
     }
 
+    receiveResponse(response)
+    {
+        this.dataFromWwise = JSON.parse(response);
+        return this.dataFromWwise;
+    }
+
+    receiveError(error)
+    {
+        this.connectionError = error;
+        return this.connectionError;
+    }
+
     send(WwisePacket)
     {
         this.dataFromWwise = null;
@@ -37,28 +49,16 @@ export class Wwise
             session.call(WwisePacket.functionCall, [], {}).then(
                 function (res)
                 {
-                    return this.recieveResponse(res);
+                    this.dataFromWwise = res;
                 },
 
                 function (error)
                 {
-                    return this.receiveError(error);
+                    this.connectionError = JSON.parse(error);
                 }
             );
         };
 
         this.connection.open();
-    }
-
-    private receiveResponse(response)
-    {
-        this.dataFromWwise = JSON.parse(response);
-        return this.dataFromWwise;
-    }
-
-    private receiveError(error)
-    {
-        this.connectionError = error;
-        return this.connectionError;
     }
 }
