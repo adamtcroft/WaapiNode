@@ -1,10 +1,13 @@
 import * as autobahn from 'autobahn';
 import {ak} from 'waapi';
 import * as waapi from 'waapi';
+import { WwisePacket } from './wwisepacket';
+import { WwiseFunctions } from './wwisefunctions';
 
 export class Wwise
 {
     connection:autobahn.Connection;
+    packet:WwisePacket;
 
     constructor()
     {
@@ -16,6 +19,9 @@ export class Wwise
                 protocols: ['wamp.2.json']
             }
         );
+
+        this.packet.functionCall = WwiseFunctions.getInfo;
+        this.send(this.packet);
     }
 
     send(WwisePacket)
@@ -27,16 +33,27 @@ export class Wwise
             session.call(WwisePacket.functionCall, [], {}).then(
                 function (res)
                 {
-                    console.log(res);
+                    return this.recieveResponse(res);
                 },
 
                 function (error)
                 {
-                    console.log(error);
+                    return this.receiveError(error);
                 }
             );
         };
 
         this.connection.open();
+    }
+
+    receiveResponse(response)
+    {
+        var obj = JSON.parse(response);
+        return obj;
+    }
+
+    receiveError(error)
+    {
+        return error;
     }
 }
