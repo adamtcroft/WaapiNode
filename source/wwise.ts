@@ -27,33 +27,18 @@ export class Wwise
         this.send(this.packet);
     }
 
-    receiveResponse(response)
-    {
-        var that = this;
-        that.dataFromWwise = JSON.parse(response);
-        return this.dataFromWwise;
-    }
-
-    receiveError(error)
-    {
-        var that = this;
-        that.connectionError = error;
-        return this.connectionError;
-    }
-
     send(WwisePacket)
     {
-        this.connection.onopen = function(session)
+        this.connection.onopen = (session) =>
         {
             console.log('wamp connection opened');
 
             session.call(WwisePacket.functionCall, [], {}).then(
-                function (res)
+                (res) =>
                 {
                     this.dataFromWwise = res;
                 },
-
-                function (error)
+                (error) =>
                 {
                     this.connectionError = JSON.parse(error);
                 }
