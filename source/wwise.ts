@@ -22,7 +22,7 @@ export class Wwise
             }
         );
 
-        this.packet.functionCall = WwiseFunctions.getInfo;
+        this.packet = new WwisePacket(WwiseFunctions.getInfo);
         this.send(this.packet);
     }
 
