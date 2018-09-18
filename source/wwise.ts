@@ -38,6 +38,7 @@ export class Wwise
                 {
                     console.log(res);
                     this.dataFromWwise = res;
+                    console.log(this.dataFromWwise);
                 },
                 (error) =>
                 {
