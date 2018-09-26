@@ -1,7 +1,5 @@
-import {WwiseFunctions} from './wwisefunctions';
-
 export class WwisePacket {
-    functionCall: WwiseFunctions;
+    functionCall;
     arguments;
     options;
 

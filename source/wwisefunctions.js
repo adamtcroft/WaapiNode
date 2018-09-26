@@ -1,4 +1,5 @@
-export enum WwiseFunctions {
+export const WwiseFunctions =
+{
     executeActionOnEvent = "ak.soundengine.executeActionOnEvent",
     postEvent = "ak.soundengine.postEvent",
     postMsgMonitor = "ak.soundengine.postMsgMonitor",
@@ -25,10 +26,10 @@ export enum WwiseFunctions {
     getMinMaxPeaksInRegion = "ak.wwise.core.audioSourcePeaks.getMinMaxPeaksInRegion",
     getMinMaxPeaksInTrimmedRegion = "ak.wwise.core.audioSourcePeaks.getMinMaxPeaksInTrimmedRegion",
     getInfo = "ak.wwise.core.getInfo",
-    copy = "ak.wwise.core.object.copy",
-    create = "ak.wwise.core.object.create",
-    delete = "ak.wwise.core.object.delete",
-    get = "ak.wwise.core.object.get",
+    objectCopy = "ak.wwise.core.object.copy",
+    objectCreate = "ak.wwise.core.object.create",
+    objectDelete = "ak.wwise.core.object.delete",
+    objectGet = "ak.wwise.core.object.get",
     getAttenuationCurve = "ak.wwise.core.object.getAttenuationCurve",
     getPropertyInfo = "ak.wwise.core.object.getPropertyInfo",
     getPropertyNames = "ak.wwise.core.object.getPropertyNames",
