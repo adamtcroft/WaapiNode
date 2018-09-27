@@ -39,4 +39,4 @@ class Wwise {
     }
 }
 
-    module.exports = Wwise;
+    module.exports = { Wwise: Wwise };
