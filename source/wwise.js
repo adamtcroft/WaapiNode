@@ -4,18 +4,17 @@ const autobahn = require('autobahn');
 //const { WwiseFunctions } = require("./wwisefunctions");
 //const { WwisePacket } = require("./wwisepacket");
 
-
 class Wwise {
     constructor() {
         this.connection = new autobahn.Connection({
             url: 'ws://localhost:8080/waapi',
             realm: 'realm1',
             protocols: ['wamp.2.json']
-        }).bind(this);
+        });
     }
 
     send() {
-        connection.onopen = (session) => {
+        this.connection.onopen = (session) => {
             session.call('ak.wwise.core.getInfo', [], {}).then(
                 function (res) {
                     console.log(res);
@@ -32,7 +31,7 @@ class Wwise {
             );
         };
 
-        connection.open();
+        this.connection.open();
     }
 }
 
