@@ -11,7 +11,7 @@ class Wwise {
             url: 'ws://localhost:8080/waapi',
             realm: 'realm1',
             protocols: ['wamp.2.json']
-        });
+        }).bind(this);
     }
 
     send() {
@@ -31,7 +31,7 @@ class Wwise {
                 }
             );
         };
-        
+
         connection.open();
     }
 }
