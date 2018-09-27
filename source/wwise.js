@@ -6,11 +6,6 @@ const { WwisePacket } = require("./wwisepacket");
 
 
 class Wwise {
-    connection;
-    packet;
-    dataFromWwise;
-    connectionError;
-
     constructor() {
         this.connection = new autobahn.connection({
             url: 'ws://localhost:8080/waapi',
