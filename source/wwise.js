@@ -5,7 +5,7 @@ const { WwiseFunctions } = require("./wwisefunctions");
 const { WwisePacket } = require("./wwisepacket");
 
 
-export class Wwise {
+class Wwise {
     connection;
     packet;
     dataFromWwise;
@@ -39,7 +39,9 @@ export class Wwise {
                 }
             );
         };
-        
+
         this.connection.open();
     }
 }
+
+    module.exports = Wwise;

@@ -1,4 +1,4 @@
-export class WwisePacket {
+class WwisePacket {
     functionCall;
     arguments;
     options;
@@ -7,3 +7,5 @@ export class WwisePacket {
         this.functionCall = functionCall;
     }
 }
+
+module.exports = WwisePacket;

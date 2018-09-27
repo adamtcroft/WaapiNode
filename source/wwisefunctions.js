@@ -1,4 +1,4 @@
-export const WwiseFunctions =
+const WwiseFunctions =
 {
     executeActionOnEvent = "ak.soundengine.executeActionOnEvent",
     postEvent = "ak.soundengine.postEvent",
@@ -68,3 +68,5 @@ export const WwiseFunctions =
     project_close = "ak.wwise.project.close",
     project_open = "ak.wwise.project.open",
 }
+
+module.exports = WwiseFunctions;
