@@ -9,15 +9,19 @@ class Wwise {
         });
     }
 
-    send() {
+    async send() {
+        let result = await talktoWwise();
+        return result;
+    }
+
+    talktoWwise()
+    {
         this.connection.onopen = (session) => {
             session.call('ak.wwise.core.getInfo', [], {}).then(
                 function (res) {
-                    console.log(res);
                     return res;
                 },
                 function (error) {
-                    console.log(error);
                     return error;
                 }
             ).then(
