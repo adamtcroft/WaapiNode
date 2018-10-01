@@ -11,7 +11,7 @@ class Wwise {
 
     send() {
         this.connection.onopen = (session) => {
-            session.call('ak.wwise.core.getInfo', [], {}) = () => (
+            session.call('ak.wwise.core.getInfo', [], {}).then(
                 function (res) {
                     console.log(res);
                 },
