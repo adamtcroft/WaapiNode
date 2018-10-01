@@ -13,10 +13,10 @@ class Wwise {
         this.connection.onopen = (session) => {
             session.call('ak.wwise.core.getInfo', [], {}).then(
                 function (res) {
-                    this.dataFromWwise = res;
+                    return res;
                 },
                 function (error) {
-                    this.wwiseError = error;
+                    return error;
                 }
             ).then(
                 {
