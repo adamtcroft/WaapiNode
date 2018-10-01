@@ -9,11 +9,6 @@ class Wwise {
         });
     }
 
-    async send() {
-        let result = await talktoWwise();
-        return result;
-    }
-
     talktoWwise()
     {
         this.connection.onopen = (session) => {
@@ -34,6 +29,11 @@ class Wwise {
         };
 
         this.connection.open();
+    }
+
+    async send() {
+        let result = await talktoWwise();
+        return result;
     }
 }
 
