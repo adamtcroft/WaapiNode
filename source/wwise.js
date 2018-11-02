@@ -7,10 +7,6 @@ class Wwise {
             realm: 'realm1',
             protocols: ['wamp.2.json']
         });
-    }
-
-    talktoWwise()
-    {
         this.connection.onopen = (session) => {
             session.call('ak.wwise.core.getInfo', [], {}).then(
                 function (res) {
@@ -27,13 +23,10 @@ class Wwise {
                 }
             );
         };
-
-        this.connection.open();
     }
 
-    async send() {
-        let result = await talktoWwise();
-        return result;
+    talkToWwise() {
+        this.connection.open();
     }
 }
 
