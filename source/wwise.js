@@ -8,9 +8,9 @@ class Wwise {
             protocols: ['wamp.2.json']
         });
         this.connection.onopen = (session) => {
-            let res = session.call('ak.wwise.core.getInfo', [], {});
+            //let res = session.call('ak.wwise.core.getInfo', [], {});
 
-            console.log("Response: " + res);
+            //console.log("Response: " + res);
             /*
             session.call('ak.wwise.core.getInfo', [], {}).then(
                 function (res) {
