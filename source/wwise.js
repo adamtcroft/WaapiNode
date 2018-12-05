@@ -7,7 +7,7 @@ class Wwise {
             realm: 'realm1',
             protocols: ['wamp.2.json']
         });
-        this.connection.onopen = (session) => {
+        //this.connection.onopen = (session) => {
             //let res = session.call('ak.wwise.core.getInfo', [], {});
 
             //console.log("Response: " + res);
@@ -26,7 +26,7 @@ class Wwise {
                 }
             );
             */
-        };
+        //};
     }
 
     talkToWwise() {
