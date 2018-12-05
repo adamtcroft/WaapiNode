@@ -10,16 +10,15 @@ class Wwise {
         this.connection.onopen = (session) => {
             session.call('ak.wwise.core.getInfo', [], {}).then(
                 function (res) {
+                    console.log(res);
                     return res;
                 },
                 function (error) {
                     return error;
                 }
             ).then(
-                {
-                    function() {
-                        connection.close();
-                    }
+                () => {
+                    connection.close();
                 }
             );
         };
